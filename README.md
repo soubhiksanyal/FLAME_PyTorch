@@ -68,3 +68,7 @@ When using this code in a scientific publication, please cite
 ## Contact
 
 If you have any questions regarding the PyTorch implementation then you can contact us at soubhik.sanyal@tuebingen.mpg.de and timo.bolkart@tuebingen.mpg.de.
+
+## Acknowledgement 
+
+This repository is build with modifications from [SMPLX](https://github.com/vchoutas/smplx).
