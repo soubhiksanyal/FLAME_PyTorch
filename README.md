@@ -65,3 +65,7 @@ url = {https://doi.org/10.1145/3130800.3130813}
 ## Contact
 
 If you have any questions regarding the PyTorch implementation then you can contact us at soubhik.sanyal@tuebingen.mpg.de and timo.bolkart@tuebingen.mpg.de.
+
+## Acknowledgement 
+
+This repository is build with modifications from [SMPLX](https://github.com/vchoutas/smplx).
