@@ -26,8 +26,6 @@ pip install -r requirements.txt
 mkdir model
 ```
 
-* Update: Please install the following [fork](https://github.com/TimoBolkart/mesh) for working with the mesh processing libraries with python 2.7 
-
 ## Download models
 
 * Download FLAME model from [here](http://flame.is.tue.mpg.de/). Copy it inside the **model** folder. 
@@ -37,7 +35,7 @@ mkdir model
 
 #### Loading FLAME and visualising the 3D landmarks on the face
 
-Please not we used the pose dependent conture for the face as intriduced by [RingNet Project](https://github.com/soubhiksanyal/RingNet/tree/master/flame_model).
+Please note we used the pose dependent conture for the face as intriduced by [RingNet Project](https://github.com/soubhiksanyal/RingNet/tree/master/flame_model).
 
 Run the following command from the terminal
 
