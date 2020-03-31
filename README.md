@@ -32,7 +32,7 @@ mkdir model
 
 ## Download models
 
-* Download FLAME model from [here](http://flame.is.tue.mpg.de/). Copy it inside the **model** folder. 
+* Download FLAME model from [here](http://flame.is.tue.mpg.de/). You need to sign up and agree to the model license for access to the model. Copy the downloaded model inside the **model** folder. 
 * Download Landmark embedings from [RingNet Project](https://github.com/soubhiksanyal/RingNet/tree/master/flame_model). Copy it inside the **model** folder. 
 
 ## Demo
