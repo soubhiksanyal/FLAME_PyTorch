@@ -39,7 +39,7 @@ mkdir model
 
 #### Loading FLAME and visualising the 3D landmarks on the face
 
-Please note we used the pose dependent conture for the face as intriduced by [RingNet Project](https://github.com/soubhiksanyal/RingNet/tree/master/flame_model).
+Please note we used the pose dependent conture for the face as introduced by [RingNet Project](https://github.com/soubhiksanyal/RingNet/tree/master/flame_model).
 
 Run the following command from the terminal
 
