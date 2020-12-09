@@ -69,9 +69,13 @@ When using this code in a scientific publication, please cite
 
 FLAME supports several projects such as
 
+* [CoMA: Convolutional Mesh Autoencoders](https://github.com/anuragranj/coma)
 * [RingNet: 3D Face Shape and Expression Reconstruction from an Image without 3D Supervision](https://github.com/soubhiksanyal/RingNet)
 * [VOCA: Voice Operated Character Animation](https://github.com/TimoBolkart/voca)
 * [Expressive Body Capture: 3D Hands, Face, and Body from a Single Image](https://github.com/vchoutas/smplify-x)
+* [ExPose: Monocular Expressive Body Regression through Body-Driven Attention](https://github.com/vchoutas/expose)
+* [GIF: Generative Interpretable Faces](https://github.com/ParthaEth/GIF)
+* [DECA: Detailed Expression Capture and Animation](https://github.com/YadiraF/DECA)
 
 FLAME is part of [SMPL-X: : A new joint 3D model of the human body, face and hands together](https://github.com/vchoutas/smplx)
 
