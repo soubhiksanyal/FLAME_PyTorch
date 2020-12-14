@@ -1,15 +1,21 @@
-## FLAME: Faces Learned with an Articulated Model and Expressions (PyTorch)
+# FLAME: Articulated Expressive 3D Head Model (PyTorch)
+
 This is an implementation of the [FLAME](http://flame.is.tue.mpg.de/) 3D head model in PyTorch.
 
-# FLAME
-
-FLAME is a lightweight and expressive generic head model learned from over 33,000 of accurately aligned 3D scans. This repository provides sample PyTorch code to experiment with the FLAME model. For details how to adapt FLAME to images or 3D meshes, see the [Chumpy](https://github.com/Rubikplayer/flame-fitting) or the [Tensorflow](https://github.com/TimoBolkart/TF_FLAME) FLAME repositories.
+We also provide [Tensorflow FLAME](https://github.com/TimoBolkart/TF_FLAME), a [Chumpy](https://github.com/mattloper/chumpy)-based [FLAME-fitting repository](https://github.com/Rubikplayer/flame-fitting), and code to [convert from Basel Face Model to FLAME](https://github.com/TimoBolkart/BFM_to_FLAME).
 
 <p align="center"> 
 <img src="gifs/model_variations.gif">
 </p>
 
-FLAME combines a linear identity shape space (trained from 3800 scans of human heads) with an articulated neck, jaw, and eyeballs, pose-dependent corrective blendshapes, and additional global expression blendshapes. For details please about the model, please see the [scientific publication](https://ps.is.tuebingen.mpg.de/uploads_file/attachment/attachment/400/paper.pdf) and the [supplementary video](https://youtu.be/36rPTkhiJTM).
+FLAME is a lightweight and expressive generic head model learned from over 33,000 of accurately aligned 3D scans. FLAME combines a linear identity shape space (trained from head scans of 3800 subjects) with an articulated neck, jaw, and eyeballs, pose-dependent corrective blendshapes, and additional global expression blendshapes. For details please see the [scientific publication](https://ps.is.tuebingen.mpg.de/uploads_file/attachment/attachment/400/paper.pdf)
+
+```
+Learning a model of facial shape and expression from 4D scans
+Tianye Li*, Timo Bolkart*, Michael J. Black, Hao Li, and Javier Romero
+ACM Transactions on Graphics (Proc. SIGGRAPH Asia) 2017
+```
+and the [supplementary video](https://youtu.be/36rPTkhiJTM).
 
 ## Installation
 
