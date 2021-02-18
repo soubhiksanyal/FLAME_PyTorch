@@ -71,6 +71,20 @@ When using this code in a scientific publication, please cite
   url = {https://doi.org/10.1145/3130800.3130813}
 }
 ```
+
+Additionally if you use the pose dependent dynamic landmarks from this codebase, please cite 
+
+```
+@inproceedings{RingNet:CVPR:2019,
+title = {Learning to Regress 3D Face Shape and Expression from an Image without 3D Supervision},
+author = {Sanyal, Soubhik and Bolkart, Timo and Feng, Haiwen and Black, Michael},
+booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
+month = jun,
+year = {2019},
+month_numeric = {6}
+}
+```
+
 ## Supported Projects
 
 FLAME supports several projects such as
