@@ -1,5 +1,5 @@
 """
-Demo code to load the FLAME Layer and visualise the 3D landmarks on the Face 
+Demo code to load the FLAME Layer and visualise the 3D landmarks on the Face
 
 Author: Soubhik Sanyal
 Copyright (c) 2019, Soubhik Sanyal
@@ -20,14 +20,15 @@ For questions regarding the PyTorch implementation please contact soubhik.sanyal
 """
 
 import numpy as np
-import torch
-from flame_pytorch import FLAME
 import pyrender
+import torch
 import trimesh
+
 from config import get_config
+from flame_pytorch import FLAME
 
 config = get_config()
-radian = np.pi/180.0
+radian = np.pi / 180.0
 flamelayer = FLAME(config)
 
 # Creating a batch of mean shapes
@@ -36,28 +37,37 @@ shape_params = torch.zeros(8, 100).cuda()
 # Creating a batch of different global poses
 # pose_params_numpy[:, :3] : global rotaation
 # pose_params_numpy[:, 3:] : jaw rotaation
-pose_params_numpy = np.array([[0.0, 30.0*radian, 0.0, 0.0, 0.0, 0.0],
-                                [0.0, -30.0*radian, 0.0, 0.0, 0.0, 0.0],
-                                [0.0, 85.0*radian, 0.0, 0.0, 0.0, 0.0],
-                                [0.0, -48.0*radian, 0.0, 0.0, 0.0, 0.0],
-                                [0.0, 10.0*radian, 0.0, 0.0, 0.0, 0.0],
-                                [0.0, -15.0*radian, 0.0, 0.0, 0.0, 0.0],
-                                [0.0, 0.0*radian, 0.0, 0.0, 0.0, 0.0],
-                                [0.0, -0.0*radian, 0.0, 0.0, 0.0, 0.0]], dtype=np.float32)
+pose_params_numpy = np.array(
+    [
+        [0.0, 30.0 * radian, 0.0, 0.0, 0.0, 0.0],
+        [0.0, -30.0 * radian, 0.0, 0.0, 0.0, 0.0],
+        [0.0, 85.0 * radian, 0.0, 0.0, 0.0, 0.0],
+        [0.0, -48.0 * radian, 0.0, 0.0, 0.0, 0.0],
+        [0.0, 10.0 * radian, 0.0, 0.0, 0.0, 0.0],
+        [0.0, -15.0 * radian, 0.0, 0.0, 0.0, 0.0],
+        [0.0, 0.0 * radian, 0.0, 0.0, 0.0, 0.0],
+        [0.0, -0.0 * radian, 0.0, 0.0, 0.0, 0.0],
+    ],
+    dtype=np.float32,
+)
 pose_params = torch.tensor(pose_params_numpy, dtype=torch.float32).cuda()
 
 # Cerating a batch of neutral expressions
 expression_params = torch.zeros(8, 50, dtype=torch.float32).cuda()
 flamelayer.cuda()
 
-# Forward Pass of FLAME, one can easily use this as a layer in a Deep learning Framework 
-vertice, landmark = flamelayer(shape_params, expression_params, pose_params) # For RingNet project
+# Forward Pass of FLAME, one can easily use this as a layer in a Deep learning Framework
+vertice, landmark = flamelayer(
+    shape_params, expression_params, pose_params
+)  # For RingNet project
 print(vertice.size(), landmark.size())
 
 if config.optimize_eyeballpose and config.optimize_neckpose:
     neck_pose = torch.zeros(8, 3).cuda()
     eye_pose = torch.zeros(8, 6).cuda()
-    vertice, landmark = flamelayer(shape_params, expression_params, pose_params, neck_pose, eye_pose)
+    vertice, landmark = flamelayer(
+        shape_params, expression_params, pose_params, neck_pose, eye_pose
+    )
 
 # Visualize Landmarks
 # This visualises the static landmarks and the pose dependent dynamic landmarks used for RingNet project
@@ -67,8 +77,7 @@ for i in range(8):
     joints = landmark[i].detach().cpu().numpy().squeeze()
     vertex_colors = np.ones([vertices.shape[0], 4]) * [0.3, 0.3, 0.3, 0.8]
 
-    tri_mesh = trimesh.Trimesh(vertices, faces,
-                                vertex_colors=vertex_colors)
+    tri_mesh = trimesh.Trimesh(vertices, faces, vertex_colors=vertex_colors)
     mesh = pyrender.Mesh.from_trimesh(tri_mesh)
     scene = pyrender.Scene()
     scene.add(mesh)
