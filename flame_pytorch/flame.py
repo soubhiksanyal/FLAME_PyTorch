@@ -163,6 +163,7 @@ class FLAME(nn.Module):
             self.register_buffer("dynamic_lmk_faces_idx", dynamic_lmk_faces_idx)
 
             dynamic_lmk_bary_coords = conture_embeddings["lmk_b_coords"]
+            dynamic_lmk_bary_coords = np.array(dynamic_lmk_bary_coords)
             dynamic_lmk_bary_coords = torch.tensor(
                 dynamic_lmk_bary_coords, dtype=self.dtype
             )
