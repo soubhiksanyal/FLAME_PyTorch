@@ -1,8 +1,7 @@
-numpy==1.18.1
+numpy==1.23.4
 torch
 torchvision
-chumpy==0.69
+chumpy==0.70
 pyrender==0.1.39
 trimesh==3.6.18
 smplx
-pickle
