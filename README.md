@@ -32,7 +32,7 @@ source <your_home_dir>/.virtualenvs/FLAME_PyTorch/bin/activate
 ```
 git clone https://github.com/soubhiksanyal/FLAME_PyTorch
 cd FLAME_PyTorch
-pip install -r requirements.txt
+python setup.py install
 mkdir model
 ```
 

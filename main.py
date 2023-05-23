@@ -21,7 +21,7 @@ For questions regarding the PyTorch implementation please contact soubhik.sanyal
 
 import numpy as np
 import torch
-from FLAME import FLAME
+from flame_pytorch import FLAME
 import pyrender
 import trimesh
 from config import get_config
