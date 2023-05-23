@@ -265,7 +265,6 @@ class FLAME(nn.Module):
             self.J_regressor,
             self.parents,
             self.lbs_weights,
-            dtype=self.dtype,
         )
 
         lmk_faces_idx = self.lmk_faces_idx.unsqueeze(dim=0).repeat(self.batch_size, 1)
